@@ -183,7 +183,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 'title' => __('Test Mode', 'paylink'),
                 'type' => 'checkbox',
                 'label' => __('Enable Test Mode', 'paylink'),
-                'default' => 'no',
+                'default' => 'yes',
                 'description' => __('Place the payment gateway in test mode.', 'paylink'),
             ),
         );
@@ -224,7 +224,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 'redirect' => add_query_arg('order-pay', $order->get_id(), add_query_arg('key', $order->get_order_key(), $checkout_payment_url)),
             );
         } catch (Exception $e) {
-            $this->_postError($e->getMessage(), '', 'process_payment');
+            $this->_postError($e->getMessage(), '', __FUNCTION__);
             return array(
                 'result' => 'fail',
                 'redirect' => wc_get_checkout_url(),
@@ -337,7 +337,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
             $this->token = $response_body['id_token'];
             return true;
         } catch (Exception $e) {
-            $this->_postError(__('Error:') . ' ' . $e->getMessage(), $endpoint, 'paylink_auth');
+            $this->_postError(__('Error:') . ' ' . $e->getMessage(), $endpoint, __FUNCTION__);
             $this->token = null;
             return false;
         }
@@ -452,7 +452,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 wp_redirect($url);
             }
         } catch (Exception $e) {
-            $this->_postError(__('Error:') . ' ' . $e->getMessage(), $endpoint, 'add_invoice');
+            $this->_postError(__('Error:') . ' ' . $e->getMessage(), $endpoint, __FUNCTION__);
         }
     }
 
@@ -548,18 +548,23 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
             // Get the order status
             $order_status = mb_convert_case(sanitize_text_field($response_body['orderStatus']), MB_CASE_LOWER, 'UTF-8');
 
-            // Get the checkout URL for the Thank you page
-            $checkout_url = add_query_arg('transactionNo', $transaction_no, $order->get_checkout_order_received_url());
-
             // Check if the order status is paid or completed
-            if ($order_status === 'paid' || $order_status === 'completed') {
+            if ($order_status === 'paid') {
+                $checkout_url = add_query_arg('transactionNo', $transaction_no, $order->get_checkout_order_received_url()); // Get the checkout URL for the Thank you page
                 $order->payment_complete($transaction_no);
                 WC()->cart->empty_cart();
+            } else if ($order_status === 'canceled') {
+                $order->update_status('cancelled');
+                throw new Exception(__('Payment was cancelled!', 'paylink'));
+            } else if ($order_status === 'pending' && empty($response_body['paymentErrors'])) {
+                $order->update_status('pending');
+                throw new Exception(__('Payment is pending', 'paylink'));
             } else {
-                throw new Exception(__('Payment not completed yet!', 'paylink'));
+                $order->update_status('failed');
+                throw new Exception(__('Payment failed, Try again!', 'paylink'));
             }
         } catch (Exception $e) {
-            $this->_postError(esc_html($this->fail_msg) . ', ' . $e->getMessage(), $endpoint, 'get_invoice');
+            $this->_postError(esc_html($this->fail_msg) . ', ' . $e->getMessage(), $endpoint, __FUNCTION__);
         } finally {
             wp_redirect($checkout_url);
         }
