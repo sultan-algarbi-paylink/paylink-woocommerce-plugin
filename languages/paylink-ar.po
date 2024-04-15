@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Paylink Payment Gateway\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Paylink Co\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+msgid "APP ID"
+msgstr "معرف التطبيق (App Id)"
+
+msgid "Callback URL"
+msgstr "Callback Url"
+
+msgid "Card Brands"
+msgstr "بطاقات الدفع المتاحة"
+
+msgid "Description"
+msgstr "وصف بوابة الدفع"
+
+msgid "Display Thank you page"
+msgstr "عرض صفحة الشكر"
+
+msgid "Display a Thank you page before redirecting to the Paylink payment page."
+msgstr "عرض صفحة الشكر قبل توجيه المستخدم إلى صفحة الدفع Paylink."
+
+msgid "Empty response received from Paylink API while adding invoice."
+msgstr "تم استلام استجابة فارغة من Paylink أثناء إضافة الفاتورة."
+
+msgid "Empty response received from Paylink API while authenticating."
+msgstr "تم استلام استجابة فارغة من Paylink أثناء المصادقة."
+
+msgid "Empty response received from Paylink API while getting invoice."
+msgstr "تم استلام استجابة فارغة من Paylink أثناء استيراد معلومات الفاتورة."
+
+msgid "Enable/Disable"
+msgstr "تمكين/تعطيل"
+
+msgid "Enable Paylink Payment Gateway"
+msgstr "تمكين بوابة الدفع Paylink"
+
+msgid "Enable Test Mode"
+msgstr "تمكين وضع الاختبار"
+
+msgid "Error:"
+msgstr "خطأ:"
+
+msgid "Failed Payment Message"
+msgstr "رسالة فشل عملية الدفع"
+
+msgid "Failed to add invoice to Paylink API. Status Code:"
+msgstr "فشلت عملية إرسال الفاتورة إلى نظام Paylink. رمز الحالة:"
+
+msgid "Failed to authenticate with Paylink API. Status Code:"
+msgstr "يوجد خطأ في مفاتيح الربط مع Paylink. رمز الحالة:"
+
+msgid "Failed to authenticate with the Paylink API!"
+msgstr "يوجد خطأ في مفاتيح الربط مع Paylink!"
+
+msgid "Failed to connect to the Paylink API. Please try again later."
+msgstr "فشل الاتصال بـ Paylink API. يرجى المحاولة مرة أخرى في وقت لاحق."
+
+msgid "Failed to get invoice from Paylink API. Status Code:"
+msgstr "فشلت عملية استيراد معلومات الفاتورة من Paylink. رمز الحالة:"
+
+msgid "Instructions"
+msgstr "رسالة التحويل لبوابة الدفع"
+
+msgid "Instructions that will be added to the thank you page."
+msgstr "سوف يتم عرض هذه الرسالة قبل تحويل العميل إلى صفحة الدفع في Paylink."
+
+msgid "No URL found in the Paylink API response"
+msgstr "لم يتم العثور على عنوان URL في بيانات الفاتورة المستوردة من Paylink API"
+
+msgid "No authentication token found in the response from Paylink API."
+msgstr "لم يتم العثور على رمز مصادقة في الاستجابة من Paylink API."
+
+msgid "No order ID found in the request!"
+msgstr "لم يتم العثور على معرف الطلب (Order ID)!"
+
+msgid "No order status found in the Paylink API response"
+msgstr "لم يتم العثور على حالة الطلب (order status) في معلومات الطلب المستوردة من Paylink API"
+
+msgid "No transaction number found in the request!"
+msgstr "لم يتم العثور على رقم المعاملة في الطلب!"
+
+msgid "Order ID is missing!"
+msgstr "معرف الطلب مفقود!"
+
+msgid "Order not found!"
+msgstr "الطلب غير موجود!"
+
+msgid "Paylink Payment Gateway"
+msgstr "بوابة الدفع Paylink"
+
+msgid "Paylink Transaction Number"
+msgstr "رقم معاملة Paylink"
+
+msgid "Paylink payment gateway for WooCommerce, It provides your customers with the popular payment methods in the Kingdom of Saudi Arabia, such as"
+msgstr "بوابة الدفع Paylink لـ WooCommerce، توفر لعملائك طرق الدفع الشائعة في المملكة العربية السعودية، مثل"
+
+msgid "Payment not completed yet!"
+msgstr "لم يتم إكمال الدفع بعد!"
+
+msgid "Place the payment gateway in test mode."
+msgstr "وضع بوابة الدفع في وضع الاختبار."
+
+msgid "Seamless transactions with popular payment methods in the Kingdom of Saudi Arabia, including:"
+msgstr "معاملات سلسة باستخدام طرق الدفع الشائعة في المملكة العربية السعودية، بما في ذلك:"
+
+msgid "Secret Key"
+msgstr "المفتاح السري (Secret Key)"
+
+msgid "Test Mode"
+msgstr "وضع الاختبار"
+
+msgid "Test Mode is enabled."
+msgstr "تم تمكين وضع الاختبار."
+
+msgid "Thank you for your order, you will be redirected to Paylink payment page."
+msgstr "شكرًا لطلبك، سيتم توجيهك إلى صفحة الدفع Paylink."
+
+msgid "Thank you for your order. Please complete your payment using the payment button below."
+msgstr "شكرًا لطلبك. يرجى إكمال الدفع باستخدام زر الدفع أدناه."
+
+msgid "The card brands to use for the payment. Separate the brands with a comma. Valid brands are:"
+msgstr "بطاقات الدفع المسموح بها، افصل بين العلامات بفاصلة. القيم المتاحة هي:"
+
+msgid "This controls the description which the user sees during checkout."
+msgstr "يتحكم هذا في الوصف الذي يراه المستخدم أثناء الدفع."
+
+msgid "This controls the error message that appears to the user if the payment fails."
+msgstr "يتحكم هذا في رسالة الخطأ التي تظهر للمستخدم إذا فشل الدفع."
+
+msgid "This controls the title which the user sees during checkout."
+msgstr "يتحكم هذا في العنوان الذي يراه المستخدم أثناء الدفع."
+
+msgid "This is the APP ID provided by Paylink."
+msgstr "هذا هو معرف التطبيق المقدم من Paylink."
+
+msgid "This is the URL where Paylink will send the payment status callback."
+msgstr "هذا هو العنوان URL الذي سترسل Paylink إليه استدعاء حالة الدفع."
+
+msgid "This is the secret key provided by Paylink."
+msgstr "هذا هو المفتاح السري المقدم من Paylink."
+
+msgid "Title"
+msgstr "اسم وسيلة الدفع"
+
+msgid "Transaction number is missing!"
+msgstr "رقم المعاملة مفقود!"
+
+msgid "Unable to send authentication request: API ID or secret key is missing. Please provide the required credentials to proceed."
+msgstr "تعذر إرسال طلب المصادقة: (App ID) أو (Secret Key) مفقود. يرجى توفير بيانات الاعتماد المطلوبة للمتابعة."
+
+msgid "Visa/Mastercard"
+msgstr "فيزا/ماستركارد"
+
+msgid "WC Payment Gateway class does not exist. WooCommerce is not installed."
+msgstr "لم يتم تثبيت إضافة WooCommerce. يجب أن يتم تثبيت الإضافة لتتمكن من استخدام بوابة الدفع بالشكل الصحيح."
+
+msgid "WooCommerce is not installed."
+msgstr "لم يتم تثبيت إضافة WooCommerce. يجب أن يتم تثبيت الإضافة لتتمكن من استخدام بوابة الدفع بالشكل الصحيح."
+
+msgid "Your payment has failed, please try again."
+msgstr "فشلت عملية الدفع الخاصة بك، يرجى المحاولة مرة أخرى."
+
+msgid "amex"
+msgstr "أمريكان إكسبريس"
+
+msgid "mada"
+msgstr "مدى"
+
+msgid "stcpay"
+msgstr "STC Pay"
+
+msgid "tabby"
+msgstr "تابي"
+
+msgid "tamara"
+msgstr "تمارا"
+
+msgid "urpay"
+msgstr "urPay"
