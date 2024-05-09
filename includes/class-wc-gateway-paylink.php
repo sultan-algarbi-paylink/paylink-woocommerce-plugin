@@ -1,9 +1,11 @@
 <?php
 
+/** @noinspection ALL */
+
 /**
  * @class       WC_Gateway_Paylink
  * @extends     WC_Payment_Gateway
- * @version     2.1.0
+ * @version     3.0.0
  * @package     WooCommerce\Classes\Payment
  */
 class WC_Gateway_Paylink extends WC_Payment_Gateway
@@ -128,6 +130,13 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 'default' => __('Seamless transactions with popular payment methods in the Kingdom of Saudi Arabia, including:', 'paylink'),
                 'desc_tip' => true,
             ),
+            'test_mode' => array(
+                'title' => __('Test Mode', 'paylink'),
+                'type' => 'checkbox',
+                'label' => __('Enable Test Mode', 'paylink'),
+                'default' => 'yes',
+                'description' => __('Place the payment gateway in test mode.', 'paylink'),
+            ),
             'app_id' => array(
                 'title' => __('APP ID', 'paylink'),
                 'type' => 'text',
@@ -178,13 +187,6 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 'type' => 'textarea',
                 'default' => __('Your payment has failed, please try again.', 'paylink'),
                 'desc_tip' => true
-            ),
-            'test_mode' => array(
-                'title' => __('Test Mode', 'paylink'),
-                'type' => 'checkbox',
-                'label' => __('Enable Test Mode', 'paylink'),
-                'default' => 'yes',
-                'description' => __('Place the payment gateway in test mode.', 'paylink'),
             ),
         );
     }
