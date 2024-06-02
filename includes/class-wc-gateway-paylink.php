@@ -5,7 +5,7 @@
 /**
  * @class       WC_Gateway_Paylink
  * @extends     WC_Payment_Gateway
- * @version     3.0.0
+ * @version     3.0.1
  * @package     WooCommerce\Classes\Payment
  */
 class WC_Gateway_Paylink extends WC_Payment_Gateway
@@ -138,14 +138,14 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 'description' => __('Place the payment gateway in test mode.', 'paylink'),
             ),
             'app_id' => array(
-                'title' => __('APP ID', 'paylink'),
+                'title' => __('Live APP ID', 'paylink'),
                 'type' => 'text',
                 'description' => __('This is the APP ID provided by Paylink.', 'paylink'),
                 'default' => '',
                 'desc_tip' => true,
             ),
             'secret_key' => array(
-                'title' => __('Secret Key', 'paylink'),
+                'title' => __('Live Secret Key', 'paylink'),
                 'type' => 'text',
                 'description' => __('This is the secret key provided by Paylink.', 'paylink'),
                 'default' => '',
@@ -251,7 +251,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
         echo '</div>';
 
         echo '<div style="margin-top: 20px; text-align: center;">';
-        echo '<img src="' . plugins_url('../assets/payment_methods.png', __FILE__) . '" alt="' . self::_get_valid_card_brands_string() . '" style="max-height: 130px;">';
+        echo '<img src="' . plugins_url('../assets/payment_methods_min.png', __FILE__) . '" alt="' . self::_get_valid_card_brands_string() . '" style="max-height: 130px;">';
         if ($this->test_mode) {
             echo '<br/><br/><hr/><p style="color: red; font-weight: bold; background-color: white;">' . __('Test Mode is enabled.', 'paylink') . '</p>';
         }
