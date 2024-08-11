@@ -5,7 +5,7 @@
 /**
  * @class       WC_Gateway_Paylink
  * @extends     WC_Payment_Gateway
- * @version     3.0.1
+ * @version     3.0.2
  * @package     WooCommerce\Classes\Payment
  */
 class WC_Gateway_Paylink extends WC_Payment_Gateway
@@ -408,7 +408,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                     'lang' => 'ar',
                     'products' => $products,
                     'currency' => $order->get_currency(),
-                    'supportedCardBrands' => explode(',', $this->card_brands),
+                    // 'supportedCardBrands' => explode(',', $this->card_brands),
                     'displayPending' => true,
                 ]),
                 'timeout' => 60,
