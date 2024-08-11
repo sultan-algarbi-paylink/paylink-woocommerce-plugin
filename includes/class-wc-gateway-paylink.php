@@ -151,16 +151,16 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 'default' => '',
                 'desc_tip' => true,
             ),
-            'callback_url' => array(
-                'title' => __('Callback URL', 'paylink'),
-                'type' => 'text',
-                'description' => __('This is the URL where Paylink will send the payment status callback.', 'paylink'),
-                'default' => get_site_url() . '/wc-api/' . strtolower(get_class($this)),
-                'desc_tip' => true,
-                'custom_attributes' => [
-                    'readonly' => 'readonly'
-                ]
-            ),
+            // 'callback_url' => array(
+            //     'title' => __('Callback URL', 'paylink'),
+            //     'type' => 'text',
+            //     'description' => __('This is the URL where Paylink will send the payment status callback.', 'paylink'),
+            //     'default' => get_site_url() . '/wc-api/' . strtolower(get_class($this)),
+            //     'desc_tip' => true,
+            //     'custom_attributes' => [
+            //         'readonly' => 'readonly'
+            //     ]
+            // ),
             // 'card_brands' => array(
             //     'title' => __('Card Brands', 'paylink'),
             //     'type' => 'text',
