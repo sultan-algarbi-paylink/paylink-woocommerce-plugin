@@ -5,7 +5,7 @@
 /**
  * @class       WC_Gateway_Paylink
  * @extends     WC_Payment_Gateway
- * @version     3.0.3
+ * @version     3.0.4
  * @package     WooCommerce\Classes\Payment
  */
 class WC_Gateway_Paylink extends WC_Payment_Gateway
