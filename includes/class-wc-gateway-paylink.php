@@ -161,13 +161,13 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                     'readonly' => 'readonly'
                 ]
             ),
-            'card_brands' => array(
-                'title' => __('Card Brands', 'paylink'),
-                'type' => 'text',
-                'description' => __('The card brands to use for the payment. Separate the brands with a comma. Valid brands are:', 'paylink') . ' ' . implode(',', self::VALID_CARD_BRANDS),
-                'default' => implode(',', self::VALID_CARD_BRANDS),
-                'desc_tip' => true,
-            ),
+            // 'card_brands' => array(
+            //     'title' => __('Card Brands', 'paylink'),
+            //     'type' => 'text',
+            //     'description' => __('The card brands to use for the payment. Separate the brands with a comma. Valid brands are:', 'paylink') . ' ' . implode(',', self::VALID_CARD_BRANDS),
+            //     'default' => implode(',', self::VALID_CARD_BRANDS),
+            //     'desc_tip' => true,
+            // ),
             'display_thank_you' => array(
                 'title' => __('Display Thank you page', 'paylink'),
                 'type' => 'checkbox',
