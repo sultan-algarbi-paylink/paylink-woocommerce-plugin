@@ -1,21 +1,19 @@
 === PayLink Payment Gateway ===
 Contributors: hasanayoub, algarbisultan
 Requires at least: 5.5.1
-Tested up to: 6.6.1
+Tested up to: 6.6.2
 Requires PHP: 7.0
 Stable tag: 3.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Accept popular payment methods in Saudi Arabia with PayLink Payment Gateway.
 
 == Description ==
 
 The PayLink Payment Gateway plugin allows you to accept popular payment methods in the Kingdom of Saudi Arabia, including mada, Visa/Mastercard, American Express, Tabby, Tamara, STC Pay, and URPay.
 
 For more information, visit [PayLink Developer Documentation](https://developer.paylink.sa/docs/woocommerce-plugin).
-
-== Short Description ==
-
-Accept popular payment methods in Saudi Arabia with PayLink Payment Gateway.
 
 == Frequently Asked Questions ==
 
