@@ -5,7 +5,7 @@
 /**
  * @class       WC_Gateway_Paylink
  * @extends     WC_Payment_Gateway
- * @version     3.0.4
+ * @version     3.0.5
  * @package     WooCommerce\Classes\Payment
  */
 class WC_Gateway_Paylink extends WC_Payment_Gateway
@@ -15,10 +15,10 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
     private string $secret_key;         // The secret key provided by Paylink.
     private string $callback_url;       // The URL where Paylink will send the payment status callback.
     private string $card_brands;         // The card brands to use for the payment.
-    private bool   $display_thank_you;  // Display a Thank you page before redirecting to the Paylink payment page.
+    private bool $display_thank_you;  // Display a Thank you page before redirecting to the Paylink payment page.
     private string $instructions;       // Gateway instructions that will be added to the thank you page and emails.
     private string $fail_msg;           // The error message that appears to the user if the payment fails.
-    private bool   $test_mode;          // Enable Test Mode.
+    private bool $test_mode;          // Enable Test Mode.
 
     // General properties
     private string|null $token;         // The token used to authenticate the request.
@@ -95,11 +95,11 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
      */
     protected function setup_properties()
     {
-        $this->id                 = 'paylink';
-        $this->icon               = apply_filters('woocommerce_paylink_icon', plugins_url('../assets/icon.min.png', __FILE__));
-        $this->method_title       = __('Paylink Payment Gateway', 'paylink');
+        $this->id = 'paylink';
+        $this->icon = apply_filters('woocommerce_paylink_icon', plugins_url('../assets/icon.min.png', __FILE__));
+        $this->method_title = __('Paylink Payment Gateway', 'paylink');
         $this->method_description = __("Paylink payment gateway for WooCommerce, It provides your customers with the popular payment methods in the Kingdom of Saudi Arabia, such as", 'paylink') . ' ' . self::_get_valid_card_brands_string();
-        $this->has_fields         = false;
+        $this->has_fields = false;
     }
 
     // ---------------------------------- inheritdoc Methods ----------------------------------
@@ -200,7 +200,6 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
     public function process_payment($order_id)
     {
         try {
-
             // Clear the WooCommerce notices.
             if (function_exists('wc_clear_notices')) {
                 wc_clear_notices();
@@ -222,7 +221,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
 
             // Return thankyou redirect.
             return array(
-                'result'   => 'success',
+                'result' => 'success',
                 'redirect' => add_query_arg('order-pay', $order->get_id(), add_query_arg('key', $order->get_order_key(), $checkout_payment_url)),
             );
         } catch (Exception $e) {
@@ -287,10 +286,10 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
      */
     private function _paylink_auth()
     {
-        try {
-            // Endpoint URL
-            $endpoint = $this->base_url . '/api/auth';
+        // Endpoint URL
+        $endpoint = $this->base_url . '/api/auth';
 
+        try {
             // Check if the APP ID and Secret Key are set
             if (empty($this->app_id) || empty($this->secret_key)) {
                 throw new Exception(__('Unable to send authentication request: API ID or secret key is missing. Please provide the required credentials to proceed.', 'paylink'));
@@ -347,14 +346,14 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
 
     public function add_invoice($order_id)
     {
+        // Endpoint URL
+        $endpoint = $this->base_url . '/api/addInvoice';
+
         try {
             // Clear the WooCommerce notices.
             if (function_exists('wc_clear_notices')) {
                 wc_clear_notices();
             }
-
-            // Endpoint URL
-            $endpoint = $this->base_url . '/api/addInvoice';
 
             // Check if the order ID is empty
             if (empty($order_id)) {
@@ -566,7 +565,7 @@ class WC_Gateway_Paylink extends WC_Payment_Gateway
                 throw new Exception(__('Payment failed, Try again!', 'paylink'));
             }
         } catch (Exception $e) {
-            $this->_postError(esc_html($this->fail_msg) . ', ' . $e->getMessage(), $endpoint, __FUNCTION__);
+            $this->_postError(esc_html($this->fail_msg) . ', ' . $e->getMessage(), '/api/getInvoice/', __FUNCTION__);
         } finally {
             wp_redirect($checkout_url);
         }

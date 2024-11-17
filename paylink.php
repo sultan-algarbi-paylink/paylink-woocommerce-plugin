@@ -10,7 +10,7 @@
  * Author:      Paylink Co
  * Author URI:  https://paylink.sa
  * Description: Use this woocommerce payment gateway plugin to enable clients of your store to pay using Paylink gateway.
- * Version:     3.0.4
+ * Version:     3.0.5
  * License:     GPL-2.0+
  * License URL: http://www.gnu.org/licenses/gpl-2.0.txt
  * text-domain: paylink

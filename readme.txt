@@ -3,7 +3,7 @@ Contributors: hasanayoub, algarbisultan
 Requires at least: 5.5.1
 Tested up to: 6.6.2
 Requires PHP: 7.0
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Please refer to the [installation guide](https://developer.paylink.sa/docs/wooco
 The plugin supports mada, Visa/Mastercard, American Express, Tabby, Tamara, STC Pay, URPay, and more.
 
 == Changelog ==
+
+= 3.0.5 =
+* Fixed undefined `$endpoint` bug.
 
 = 3.0.4 =
 * Revised the readme file to comply with WordPress.org guidelines, including adding missing sections such as Short Description, Frequently Asked Questions, and adjusted contributor details and included links to documentation.
